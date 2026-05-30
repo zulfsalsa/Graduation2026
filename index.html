@@ -323,7 +323,7 @@ const DEFAULTS = {
 function loadData()   { try { const r = localStorage.getItem(STORE_KEY); return r ? JSON.parse(r) : DEFAULTS; } catch { return DEFAULTS; } }
 function persists(d)  { try { localStorage.setItem(STORE_KEY, JSON.stringify(d)); } catch {} }
 function uid()        { return Math.random().toString(36).substr(2, 9); }
-function toDL(url)    { if (!url) return ''; const m = url.match(/\/d\/([-\w]+)/); return m ? `https://drive.google.com/uc?export=download&id=${m[1]}` : url; }
+function toDL(url)    { if (!url) return ''; const m = url.match(/\/d\/([-\w]+)/); return m ? `https://drive.google.com/uc?export=download&id=${m[1]}/view` : url; }
 
 /* ================================================================
    STATE
@@ -760,8 +760,6 @@ function renderAdmin() {
       )
     ),
 
-    el('p', { style: { marginTop: '1rem', fontSize: '12px', color: 'var(--text3)', textAlign: 'center' } },
-      'Password admin default: ', el('code', {}, 'admin2025'), ' · Ganti di Pengaturan'
     )
   );
 }
