@@ -468,16 +468,16 @@ function renderDashboard() {
   const action = el('div');
   if (s.lulus) {
     action.appendChild(el('p', { style: { fontSize: '14px', color: 'var(--text2)', lineHeight: '1.7', marginBottom: '1.25rem' } },
-      'Selamat! Kamu telah berhasil menyelesaikan pendidikan di ',
+      'Selamat! Kamu telah dinyatakan lulus dari ',
       el('strong', {}, info.name), '. Semangat untuk langkah berikutnya!'
     ));
     action.appendChild(
       dl
         ? el('a', { cls: 'btn-dl', href: dl, target: '_blank', rel: 'noreferrer' }, ic('download', { fontSize: '16px' }), ' Unduh Surat Keterangan Lulus')
-        : alertEl('warn', 'SKL sedang dipersiapkan. Hubungi guru/wali kelas untuk info lebih lanjut.')
+        : alertEl('warn', 'Silahkan unduh SKL.')
     );
   } else {
-    action.appendChild(alertEl('err', 'Berdasarkan data yang ada, kamu <strong>belum dinyatakan lulus</strong> pada tahun ajaran ini. Segera hubungi <strong>guru atau wali kelas</strong> untuk informasi dan langkah selanjutnya.'));
+    action.appendChild(alertEl('err', 'Berdasarkan data yang ada, kamu <strong>belum dinyatakan lulus</strong> pada tahun ajaran ini. Segera hubungi <strong>Pak Ahmad</strong> untuk informasi dan langkah selanjutnya.'));
   }
 
   const badgeEl = el('div', { style: { marginBottom: '1.25rem' } });
