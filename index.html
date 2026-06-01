@@ -323,7 +323,7 @@ const DEFAULTS = {
 function loadData()   { try { const r = localStorage.getItem(STORE_KEY); return r ? JSON.parse(r) : DEFAULTS; } catch { return DEFAULTS; } }
 function persists(d)  { try { localStorage.setItem(STORE_KEY, JSON.stringify(d)); } catch {} }
 function uid()        { return Math.random().toString(36).substr(2, 9); }
-function toDL(url)    { if (!url) return ''; const m = url.match(/\/d\/([-\w]+)/); return m ? `https://drive.google.com/uc?export=download&id=${m[1]}/view` : url; }
+function toDL(url) { if (!url) return ''; const m = url.match(/\/d\/([-\w]+)/); return m ? `https://drive.google.com/file/d/${m[1]}/view` : url; }
 
 /* ================================================================
    STATE
@@ -440,7 +440,7 @@ function renderLogin() {
     }, 550);
   }
 
-  return el('div', { cls: 'page-center' },
+  return el('div', { cls: 'page-center', style: { background: s.lulus ? '#2563eb' : '#dc2626' } },
     el('div', { cls: 'card fu', style: { width: '100%', maxWidth: '400px', padding: '2.75rem 2.25rem' } },
       el('div', { style: { width: '62px', height: '62px', borderRadius: '50%', background: '#FAC775', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.4rem', color: '#633806' } },
         ic('certificate', { fontSize: '27px' })
