@@ -440,7 +440,7 @@ function renderLogin() {
     }, 550);
   }
 
-  return el('div', { cls: 'page-center', style: { background: s.lulus ? '#2563eb' : '#dc2626' } },
+  return el('div', { cls: 'page-center' },
     el('div', { cls: 'card fu', style: { width: '100%', maxWidth: '400px', padding: '2.75rem 2.25rem' } },
       el('div', { style: { width: '62px', height: '62px', borderRadius: '50%', background: '#FAC775', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.4rem', color: '#633806' } },
         ic('certificate', { fontSize: '27px' })
@@ -483,7 +483,7 @@ function renderDashboard() {
   const badgeEl = el('div', { style: { marginBottom: '1.25rem' } });
   badgeEl.innerHTML = `<span class="badge ${s.lulus ? 'badge-lulus' : 'badge-tidak'}"><i class="ti ti-${s.lulus ? 'circle-check' : 'circle-x'}" aria-hidden="true" style="font-size:13px"></i>${s.lulus ? 'DINYATAKAN LULUS' : 'BELUM DINYATAKAN LULUS'}</span>`;
 
-  return el('div', { cls: 'page-center' },
+  return el('div', { cls: 'page-center', style: { background: s.lulus ? '#2563eb' : '#dc2626' } },
     el('div', { cls: 'card fu', style: { width: '100%', maxWidth: '490px', padding: '2.75rem 2.25rem', textAlign: 'center' } },
       badgeEl,
       el('div', { style: { marginBottom: '12px' } },
